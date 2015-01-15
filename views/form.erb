@@ -1,0 +1,33 @@
+<h3>A list of words</h3>
+<ul>
+  <% @words.each() do |word| %>
+  <% find_word = word.word()%>
+  <% tag = "/term/" + find_word %>
+  <li><a href=<%= tag %>
+    <%=find_word %></a></li>
+    <%end %>
+</ul>
+
+<h3>Enter your word:</h3>
+<div class="form">
+  <form action="/submit" method="post">
+    <div class="form-group">
+      <label for="word">Word</label>
+      <input type="text" name="word" id="word" placeholder="Enter a word." class="form-control">
+    </div>
+    <div class="form-group">
+      <label for="language">Language</label>
+      <input type="text" name="language" id="language" placeholder="Enter a language." class="form-control">
+    </div>
+    <div class="form-group">
+      <label for="definition">Definition</label>
+      <input type="text" name="definition" id="definition" placeholder="Enter a definition." class="form-control">
+    </div>
+
+    <br>
+
+
+    <button type="submit" class="btn btn-lg btn-primary">Add this term</button>
+    <button type="reset" class="btn btn-lg btn-primary">Reset</button>
+  </form>
+</div>
