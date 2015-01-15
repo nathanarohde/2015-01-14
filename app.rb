@@ -4,6 +4,7 @@ also_reload ('lib/*/**.rb')
 require ('./lib/dictionary')
 require ('./lib/word')
 require ('./lib/definition')
+require ('pry')
 
 get ('/') do
   @words=Word.all()
